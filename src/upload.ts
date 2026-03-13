@@ -8,19 +8,15 @@ export async function uploadModel(options: UploadOptions): Promise<ModelMetadata
   const client = createShelbyClient();
   const account = loadAccount();
 
-  // -- Read the model file --
   const absolutePath = path.resolve(options.filePath);
   const blobData = await fs.readFile(absolutePath);
   const sizeBytes = blobData.byteLength;
-
   const blobName = `models/${options.id}/weights${path.extname(options.filePath)}`;
 
-  // -- Upload model weights to Shelby --
   await client.upload({
-    account,
+    signer: account as any,
     blobData,
     blobName,
-    // Store for 1 year on testnet
     expirationMicros: (Date.now() + 1000 * 60 * 60 * 24 * 365) * 1000,
   });
 
@@ -39,8 +35,6 @@ export async function uploadModel(options: UploadOptions): Promise<ModelMetadata
     baseModel: options.baseModel,
   };
 
-  // -- Register model in the on-Shelby registry --
   await addModel(client, account, metadata);
-
   return metadata;
 }
