@@ -1,0 +1,35 @@
+{
+  "name": "shelby-hub",
+  "version": "0.1.0",
+  "description": "Decentralized AI model registry built on Shelby Protocol — upload, discover, and monetize AI model weights on-chain.",
+  "main": "dist/index.js",
+  "bin": {
+    "shelby-hub": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node src/cli.ts",
+    "upload": "ts-node src/cli.ts upload",
+    "list": "ts-node src/cli.ts list",
+    "download": "ts-node src/cli.ts download"
+  },
+  "keywords": ["shelby", "aptos", "ai", "model-registry", "decentralized", "web3"],
+  "author": "Batuhan Koçyiğit <github.com/batuhankocyigit>",
+  "license": "MIT",
+  "dependencies": {
+    "@aptos-labs/ts-sdk": "^1.33.1",
+    "@shelby-protocol/sdk": "^0.0.18",
+    "chalk": "^5.3.0",
+    "cli-table3": "^0.6.5",
+    "commander": "^12.0.0",
+    "dotenv": "^16.4.5",
+    "fs-extra": "^11.2.0",
+    "ora": "^8.0.1"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^20.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.0"
+  }
+}
