@@ -13,23 +13,33 @@
     "list": "ts-node src/cli.ts list",
     "download": "ts-node src/cli.ts download"
   },
-  "keywords": ["shelby", "aptos", "ai", "model-registry", "decentralized", "web3"],
+  "keywords": [
+    "shelby",
+    "aptos",
+    "ai",
+    "model-registry",
+    "decentralized",
+    "web3"
+  ],
   "author": "Batuhan Koçyiğit <github.com/batuhankocyigit>",
   "license": "MIT",
   "dependencies": {
-    "@aptos-labs/ts-sdk": "^1.33.1",
-    "@shelby-protocol/sdk": "^0.0.18",
+    "@aptos-labs/ts-sdk": "^5.2.1",
+    "@shelby-protocol/sdk": "^0.2.4",
     "chalk": "^5.3.0",
     "cli-table3": "^0.6.5",
     "commander": "^12.0.0",
     "dotenv": "^16.4.5",
     "fs-extra": "^11.2.0",
+    "got": "^14.6.6",
     "ora": "^8.0.1"
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
     "@types/node": "^20.0.0",
     "ts-node": "^10.9.2",
+    "tsx": "^4.21.0",
     "typescript": "^5.4.0"
-  }
+  },
+  "type": "module"
 }
